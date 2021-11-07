@@ -25,6 +25,26 @@ main {
     @include cssGrid(2,0);
 
     nav {
-        @include cssElement(1,2);
+        grid-column: 1 / span 2;
+    }
+
+    article:first-child {
+        grid-column: 1 / span 2;
+    }
+
+    article:nth-child(2) {
+        grid-column: 1 / span 2;
+    }
+
+    article:nth-child(3) {
+        grid-column: 1 / span 1;
+    }
+
+    article:nth-child(4) {
+        grid-column: 2 / span 1;
+    }
+
+    article:nth-child(5) {
+        grid-column: 1 / span 1;
     }
 }

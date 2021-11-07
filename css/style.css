@@ -13,6 +13,16 @@ main {
   grid-auto-flow: row;
   grid-gap: 0; }
   main nav {
-    grid-column: 1 / 2; }
+    grid-column: 1 / span 2; }
+  main article:first-child {
+    grid-column: 1 / span 2; }
+  main article:nth-child(2) {
+    grid-column: 1 / span 2; }
+  main article:nth-child(3) {
+    grid-column: 1 / span 1; }
+  main article:nth-child(4) {
+    grid-column: 2 / span 1; }
+  main article:nth-child(5) {
+    grid-column: 1 / span 1; }
 
 /*# sourceMappingURL=style.css.map */
