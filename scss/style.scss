@@ -13,16 +13,46 @@ header img {
 //     @include cssGrid(2,1);
 // }
 
+h2 {
+    color: orange
+}
+
 header{
     // @include element(1,2,auto,auto)
     // @include cssElement(1,2)
 
     // @include grid(3, 1fr, auto, auto, 0);
-    @include cssGrid(3,0);
+    // @include cssGrid(6,0);
+    // grid-template-rows: 2fr 1fr 2fr;
+
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 2em);
+
+    grid-template-areas: 
+                "icone icone title title title title"
+                "space space space space bar bar"
+                "text text text text text text";
+
+    &>img {
+        grid-area: 'icone';
+    }
+
+    #header_title {
+        grid-area: 'title';
+    }
+
+    #header_nav {
+        grid-area: 'bar';
+    }
+
+    #header_text {
+        grid-area: 'text';
+    }
 }
 
+
 main {
-    @include cssGrid(2,0);
+    @include cssGrid(2, 1em);
 
     nav {
         grid-column: 1 / span 2;
@@ -37,14 +67,39 @@ main {
     }
 
     article:nth-child(3) {
-        grid-column: 1 / span 1;
+        grid-column: 1 / span 2;
     }
 
     article:nth-child(4) {
-        grid-column: 2 / span 1;
+        grid-column: 1 / span 1;
     }
 
     article:nth-child(5) {
+        grid-column: 2 / span 1;
+    }
+
+    article:nth-child(6) {
         grid-column: 1 / span 1;
     }
+
+    article:nth-child(7) {
+        grid-column: 1 / span 2;
+    }
+
+    article:nth-child(8) {
+        grid-column: 1 / span 2;
+    }
+
+    article:nth-child(9) {
+        grid-column: 1 / span 2;
+    }
+
+    article:nth-child(10) {
+        grid-column: 1 / span 2;
+    }
+
+    article:nth-child(11) {
+        grid-column: 1 / span 2;
+    }
+    
 }
