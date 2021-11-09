@@ -2,6 +2,28 @@
 
 @import 'mixin';
 
+// rename
+
+// small var
+// header
+
+$s_nb_col_header: 6;
+$s_nb_col_main: 2;
+
+// small medium var
+$sm_min_screen_width: 53em;
+
+// medium var
+$m_min_screen_width: 65em;
+
+// medium large var
+$ml_min_screen_width: 77em;
+
+// large var
+$l_min_screen_width: 91em;
+
+
+$gutter_width: 1em;
 
 // temporary width img
 header img {
@@ -22,31 +44,63 @@ header{
     // @include cssElement(1,2)
 
     // @include grid(3, 1fr, auto, auto, 0);
-    // @include cssGrid(6,0);
+    // @include cssGrid(6,1em);
     // grid-template-rows: 2fr 1fr 2fr;
-
+    display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(3, 2em);
+    grid-template-rows: repeat(2em, 0.4em, 4em);
+    grid-gap: 1em;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+
 
     grid-template-areas: 
-                "icone icone title title title title"
-                "space space space space bar bar"
-                "text text text text text text";
+                "icone title title title title title"
+                "space space space bar bar bar"
+                "txt txt txt txt txt txt";
 
     &>img {
-        grid-area: 'icone';
+        grid-area: icone;
     }
 
     #header_title {
-        grid-area: 'title';
+        grid-area: title;
+        
     }
-
+    
     #header_nav {
-        grid-area: 'bar';
+        grid-area: bar;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; // ??
+        // justify-content: space-evenly;
+
+        img { // with flex ?
+            width: 1em;
+            padding: 0.4em;
+        }
     }
 
     #header_text {
-        grid-area: 'text';
+        grid-area: txt;
+    }
+
+    @media only screen and (min-width: $sm_min_screen_width) {
+        
+    }
+
+    @media only screen and (min-width: $m_min_screen_width) {
+        
+    }
+
+    @media only screen and (min-width: $ml_min_screen_width) {
+        
+    }
+
+    @media only screen and (min-width: $l_min_screen_width) {
+        
     }
 }
 

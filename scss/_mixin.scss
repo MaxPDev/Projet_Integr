@@ -18,6 +18,9 @@
     grid-template-columns: repeat($nb_col_grid, 1fr);
     grid-auto-flow: row;
     grid-gap: $gutter_width;
+
+    padding-left: $gutter_width;
+    padding-right: $gutter_width;
 }
 
 @mixin cssElement($column_start, $column_end){
