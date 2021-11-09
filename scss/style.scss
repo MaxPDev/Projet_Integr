@@ -35,8 +35,14 @@ header img {
 //     @include cssGrid(2,1);
 // }
 
+// style autre page
 h2 {
-    color: orange
+    color: orange;
+    font-weight: bolder;
+}
+
+main nav {
+    color: orange;
 }
 
 header{
@@ -105,9 +111,18 @@ header{
 main {
     
     @include cssGrid(2, 1em);
+
+    @media only screen and (min-width: $sm_min_screen_width) {
+        @include cssGrid(3, 1em);
+    }
+
     
     nav {
         grid-column: 1 / span 2;
+
+        @media only screen and (min-width: $sm_min_screen_width) {
+            grid-column: 1 / span 1;
+        }
     }
 
     article {
@@ -126,36 +141,54 @@ main {
         }
     }
 
-    article:first-child {
+    // first-child and nth-child WTF ??
+    article:first-of-type {
         grid-column: 1 / span 2;
-    }
 
-    article:nth-child(2) {
-        grid-column: 1 / span 2;
+        @media only screen and (min-width: $sm_min_screen_width) {
+            grid-column: 2 / span 2;
+        }
     }
-
+    
     article:nth-child(3) {
         grid-column: 1 / span 2;
+
+        @media only screen and (min-width: $sm_min_screen_width) {
+            grid-column: 1 / span 2;
+        }
     }
 
     article:nth-child(4) {
-        grid-column: 1 / span 1;
-    }
+        grid-column: 1 / span 2;
 
+        @media only screen and (min-width: $sm_min_screen_width) {
+            grid-column: 1 / span 2;
+        }
+
+    }
+    
     article:nth-child(5) {
-        grid-column: 2 / span 1;
+        grid-column: 1 / span 1;
+        @media only screen and (min-width: $sm_min_screen_width) {
+            grid-column: 3 / span 1;
+        }
     }
 
     article:nth-child(6) {
-        grid-column: 1 / span 1;
+        grid-column: 3 / span 1;
     }
 
     article:nth-child(7) {
-        grid-column: 1 / span 2;
+        grid-column: 1 / span 1;
     }
 
     article:nth-child(8) {
         grid-column: 1 / span 2;
+
+        border: 2px solid black;
+        @media only screen and (min-width: $sm_min_screen_width) {
+            grid-column: 2 / span 2;
+        }
     }
 
     article:nth-child(9) {
@@ -167,6 +200,10 @@ main {
     }
 
     article:nth-child(11) {
+        grid-column: 1 / span 2;
+    }
+
+    article:nth-child(12) {
         grid-column: 1 / span 2;
     }
     
