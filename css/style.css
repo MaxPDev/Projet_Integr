@@ -37,6 +37,20 @@ main {
   padding-right: 1em; }
   main nav {
     grid-column: 1 / span 2; }
+  main article {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    main article header {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; }
+      main article header img {
+        flex-basis: 100%; }
+    main article #author_article {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; }
   main article:first-child {
     grid-column: 1 / span 2; }
   main article:nth-child(2) {
@@ -59,5 +73,25 @@ main {
     grid-column: 1 / span 2; }
   main article:nth-child(11) {
     grid-column: 1 / span 2; }
+
+/**
+
+    @media only screen and (min-width: $sm_min_screen_width) {
+        
+    }
+
+    @media only screen and (min-width: $m_min_screen_width) {
+        
+    }
+
+    @media only screen and (min-width: $ml_min_screen_width) {
+        
+    }
+
+    @media only screen and (min-width: $l_min_screen_width) {
+        
+    }
+
+*/
 
 /*# sourceMappingURL=style.css.map */

@@ -72,10 +72,7 @@ header{
     #header_nav {
         grid-area: bar;
 
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap; // ??
-        // justify-content: space-evenly;
+        @include flexRowNoWrap();
 
         img { // with flex ?
             width: 1em;
@@ -106,10 +103,27 @@ header{
 
 
 main {
+    
     @include cssGrid(2, 1em);
-
+    
     nav {
         grid-column: 1 / span 2;
+    }
+
+    article {
+        @include flexRowWrap();
+
+        header {
+            @include flexRowWrap();
+
+            img {
+                flex-basis: 100%;
+            }
+        }
+
+        #author_article {
+            @include flexRowWrap();
+        }
     }
 
     article:first-child {
@@ -157,3 +171,24 @@ main {
     }
     
 }
+
+// breakpoint
+/**
+
+    @media only screen and (min-width: $sm_min_screen_width) {
+        
+    }
+
+    @media only screen and (min-width: $m_min_screen_width) {
+        
+    }
+
+    @media only screen and (min-width: $ml_min_screen_width) {
+        
+    }
+
+    @media only screen and (min-width: $l_min_screen_width) {
+        
+    }
+
+*/

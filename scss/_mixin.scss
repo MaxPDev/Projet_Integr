@@ -26,3 +26,15 @@
 @mixin cssElement($column_start, $column_end){
     grid-column: #{$column_start} / #{$column_end};
 }
+
+@mixin flexRowWrap() {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@mixin flexRowNoWrap() {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
