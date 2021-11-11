@@ -29,7 +29,7 @@ $gutter_width: 1em;
 
 // temporary width img
 header img {
-    width: 50px;
+    // width: 2.5em;
 }
 
 // body {
@@ -48,48 +48,37 @@ main nav {
 }
 
 header{
-    // @include element(1,2,auto,auto)
-    // @include cssElement(1,2)
 
-    // @include grid(3, 1fr, auto, auto, 0);
-    // @include cssGrid(6,1em);
-    // grid-template-rows: 2fr 1fr 2fr;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2em, 0.4em, 4em);
-    grid-gap: 1em;
-    padding-top: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
-
-
-    grid-template-areas: 
-                "icone title title title title title"
-                "space space space bar bar bar"
-                "txt txt txt txt txt txt";
-
-    &>img {
-        grid-area: icone;
+    @include flexRowWrap();
+    
+    h1 {
+        order: 1;
+        @include flexRowWrap();
+        
+        img {
+            width: 2.5em
+        }
     }
 
     #header_title {
-        grid-area: title;
-        
+        //
     }
     
     #header_nav {
-        grid-area: bar;
 
+        order: 2;
         @include flexRowNoWrap();
 
         img { // with flex ?
             width: 1em;
             padding: 0.4em;
         }
+
+        align-self: flex-end;
     }
 
     #header_text {
-        grid-area: txt;
+        order: 3;
     }
 
     @media only screen and (min-width: $sm_min_screen_width) {
@@ -126,9 +115,13 @@ main {
         @include cssGrid(5, 1em);
     }
 
+    @media only screen and (min-width: $l_min_screen_width) {
+        @include cssGrid(6, 1em);
+    }
+
     
     nav {
-        grid-column: 1 / span 2;
+        grid-column: 1 / span 1; // 1 ou 2 ??
         order: 0;
 
         @media only screen and (min-width: $sm_min_screen_width) {
@@ -142,6 +135,10 @@ main {
         @media only screen and (min-width: $ml_min_screen_width) {
             grid-column: 1 / span 1;
         }
+
+        @media only screen and (min-width: $l_min_screen_width) {
+            grid-column: 1 / span 1;
+        }
     }
 
     article {
@@ -151,7 +148,7 @@ main {
             @include flexRowWrap();
 
             img {
-                flex-basis: 100%;
+                width: 100%;
             }
         }
 
@@ -176,6 +173,10 @@ main {
         @media only screen and (min-width: $ml_min_screen_width) {
             grid-column: 2 / span 2;
         }
+
+        @media only screen and (min-width: $l_min_screen_width) {
+            grid-column: 2 / span 2;
+        }
     }
     
     article:nth-of-type(2) {
@@ -195,6 +196,10 @@ main {
         @media only screen and (min-width: $ml_min_screen_width) {
             grid-column: 4 / span 2;
             order: 2;
+        }
+
+        @media only screen and (min-width: $l_min_screen_width) {
+            grid-column: 4 / span 2;
         }
     }
 
@@ -218,6 +223,11 @@ main {
             order: 3;
         }
 
+        @media only screen and (min-width: $l_min_screen_width) {
+            grid-column: 1 / span 2;
+            order: 4;
+        }
+
     }
     
     article:nth-of-type(4) {
@@ -239,6 +249,10 @@ main {
             order: 4;
         }
 
+        @media only screen and (min-width: $l_min_screen_width) {
+            grid-column: 6 / span 1;
+            order: 3;
+        }
         
     }
 
@@ -258,6 +272,10 @@ main {
         @media only screen and (min-width: $ml_min_screen_width) {
             grid-column: 4 / span 1;
         }
+
+        @media only screen and (min-width: $l_min_screen_width) {
+            grid-column: 3 / span 1;
+        }
     }
 
     article:nth-of-type(6) {
@@ -274,6 +292,10 @@ main {
 
         @media only screen and (min-width: $ml_min_screen_width) {
             grid-column: 5 / span 1;
+        }
+
+        @media only screen and (min-width: $l_min_screen_width) {
+            grid-column: 4 / span 1;
         }
     }
     
@@ -292,6 +314,10 @@ main {
         @media only screen and (min-width: $ml_min_screen_width) {
             grid-column: 1 / span 2;
         }
+
+        @media only screen and (min-width: $l_min_screen_width) {
+            grid-column: 5 / span 2;
+        }
     }
     
     article:nth-of-type(8) {
@@ -308,6 +334,10 @@ main {
 
         @media only screen and (min-width: $ml_min_screen_width) {
             grid-column: 3 / span 2;
+        }
+
+        @media only screen and (min-width: $l_min_screen_width) {
+            grid-column: 1 / span 2;
         }
     }
 
@@ -327,6 +357,10 @@ main {
         @media only screen and (min-width: $ml_min_screen_width) {
             grid-column: 1 / span 2;
         }
+
+        @media only screen and (min-width: $l_min_screen_width) {
+            grid-column: 3 / span 2;
+        }
     }
 
     article:nth-of-type(10) {
@@ -342,6 +376,10 @@ main {
 
         @media only screen and (min-width: $ml_min_screen_width) {
             grid-column: 3 / span 2;
+        }
+
+        @media only screen and (min-width: $l_min_screen_width) {
+            grid-column: 5 / span 2;
         }
     }
     
