@@ -47,13 +47,24 @@ main nav {
     color: orange;
 }
 
-header{
+body > header {
 
-    @include flexRowWrap();
+    padding: 1em;
+    // border-bottom: ;
+    box-shadow: 0.5em 0.5em 0.7em gray;
+
+    // @include flexRowWrap();
+    display: flex;
+    flex-direction: column;
+    
     
     h1 {
-        order: 1;
+        align-self: flex-start;
+        // order: 1;
         @include flexRowWrap();
+        justify-self: space-between;
+        align-items: center;
+        gap: 0.7em;
         
         img {
             width: 2.5em
@@ -65,37 +76,51 @@ header{
     }
     
     #header_nav {
-
-        order: 2;
+        align-self: flex-end;
+        // order: 2;
         @include flexRowNoWrap();
-
+        
         img { // with flex ?
             width: 1em;
             padding: 0.4em;
         }
-
-        align-self: flex-end;
+        
     }
-
+    
     #header_text {
-        order: 3;
+        // order: 3;
     }
-
+    
     @media only screen and (min-width: $sm_min_screen_width) {
+        @include flexRowWrap;
+        align-items: center;
+        justify-content: space-between;
+            
+        h1 {
+            align-self: auto;
+        }
+
+        #header_nav {
+            align-self: auto;
+        }
+
+        #header_text {
+            flex-basis: 100%;
+        }
         
     }
 
-    @media only screen and (min-width: $m_min_screen_width) {
+    // @media only screen and (min-width: $m_min_screen_width) {
         
-    }
+    // }
 
-    @media only screen and (min-width: $ml_min_screen_width) {
+    // @media only screen and (min-width: $ml_min_screen_width) {
         
-    }
+    // }
 
-    @media only screen and (min-width: $l_min_screen_width) {
+    // @media only screen and (min-width: $l_min_screen_width) {
         
-    }
+    // }
 }
 
 
