@@ -122,15 +122,24 @@ main {
         @include cssGrid(4, 1em);
     }
 
+    @media only screen and (min-width: $ml_min_screen_width) {
+        @include cssGrid(5, 1em);
+    }
+
     
     nav {
         grid-column: 1 / span 2;
+        order: 0;
 
         @media only screen and (min-width: $sm_min_screen_width) {
             grid-column: 1 / span 1;
         }
 
         @media only screen and (min-width: $m_min_screen_width) {
+            grid-column: 1 / span 1;
+        }
+
+        @media only screen and (min-width: $ml_min_screen_width) {
             grid-column: 1 / span 1;
         }
     }
@@ -163,6 +172,10 @@ main {
         @media only screen and (min-width: $m_min_screen_width) {
             grid-column: 2  / span 2;
         }
+
+        @media only screen and (min-width: $ml_min_screen_width) {
+            grid-column: 2 / span 2;
+        }
     }
     
     article:nth-of-type(2) {
@@ -177,6 +190,11 @@ main {
         @media only screen and (min-width: $m_min_screen_width) {
             grid-column: 1  / span 2;
             order: 3;
+        }
+
+        @media only screen and (min-width: $ml_min_screen_width) {
+            grid-column: 4 / span 2;
+            order: 2;
         }
     }
 
@@ -195,6 +213,11 @@ main {
             order: 4;
         }
 
+        @media only screen and (min-width: $ml_min_screen_width) {
+            grid-column: 1 / span 2;
+            order: 3;
+        }
+
     }
     
     article:nth-of-type(4) {
@@ -211,6 +234,11 @@ main {
             order: 2;
         }
 
+        @media only screen and (min-width: $ml_min_screen_width) {
+            grid-column: 3 / span 1;
+            order: 4;
+        }
+
         
     }
 
@@ -221,11 +249,14 @@ main {
 
         @media only screen and (min-width: $sm_min_screen_width) {
             grid-column: 3 / span 1;
-
         }
 
         @media only screen and (min-width: $m_min_screen_width) {
             grid-column: 1 / span 1;
+        }
+
+        @media only screen and (min-width: $ml_min_screen_width) {
+            grid-column: 4 / span 1;
         }
     }
 
@@ -240,6 +271,10 @@ main {
         @media only screen and (min-width: $m_min_screen_width) {
             grid-column: 2 / span 1;
         }
+
+        @media only screen and (min-width: $ml_min_screen_width) {
+            grid-column: 5 / span 1;
+        }
     }
     
     article:nth-of-type(7) {
@@ -252,6 +287,10 @@ main {
 
         @media only screen and (min-width: $m_min_screen_width) {
             grid-column: 3 / span 4;
+        }
+
+        @media only screen and (min-width: $ml_min_screen_width) {
+            grid-column: 1 / span 2;
         }
     }
     
@@ -266,17 +305,27 @@ main {
         @media only screen and (min-width: $m_min_screen_width) {
             grid-column: 1 / span 2;
         }
+
+        @media only screen and (min-width: $ml_min_screen_width) {
+            grid-column: 3 / span 2;
+        }
     }
 
     article:nth-of-type(9) {
         grid-column: 1 / span 2;
         order: 9;
+
+        border: 1px solid pink;
         @media only screen and (min-width: $sm_min_screen_width) {
             grid-column: 1 / span 2;
         }
 
         @media only screen and (min-width: $m_min_screen_width) {
             grid-column: 3 / span 2;
+        }
+
+        @media only screen and (min-width: $ml_min_screen_width) {
+            grid-column: 1 / span 2;
         }
     }
 
@@ -289,6 +338,10 @@ main {
 
         @media only screen and (min-width: $m_min_screen_width) {
             grid-column: 1 / span 2;
+        }
+
+        @media only screen and (min-width: $ml_min_screen_width) {
+            grid-column: 3 / span 2;
         }
     }
     
