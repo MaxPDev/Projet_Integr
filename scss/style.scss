@@ -7,6 +7,8 @@
 // small var
 // header
 
+// LA VA DOIT ETRE FIX QUAND ON SCROLL
+
 $s_nb_col_header: 6;
 $s_nb_col_main: 2;
 
@@ -116,11 +118,19 @@ main {
         @include cssGrid(3, 1em);
     }
 
+    @media only screen and (min-width: $m_min_screen_width) {
+        @include cssGrid(4, 1em);
+    }
+
     
     nav {
         grid-column: 1 / span 2;
 
         @media only screen and (min-width: $sm_min_screen_width) {
+            grid-column: 1 / span 1;
+        }
+
+        @media only screen and (min-width: $m_min_screen_width) {
             grid-column: 1 / span 1;
         }
     }
@@ -141,72 +151,154 @@ main {
         }
     }
 
-    // first-child and nth-child WTF ??
     article:first-of-type {
         grid-column: 1 / span 2;
+        border: 2px solid green;
+        order: 1;
 
         @media only screen and (min-width: $sm_min_screen_width) {
             grid-column: 2 / span 2;
         }
+
+        @media only screen and (min-width: $m_min_screen_width) {
+            grid-column: 2  / span 2;
+        }
     }
     
-    article:nth-child(3) {
+    article:nth-of-type(2) {
         grid-column: 1 / span 2;
+        border: 2px solid grey;
+        order: 2;
 
         @media only screen and (min-width: $sm_min_screen_width) {
             grid-column: 1 / span 2;
         }
+
+        @media only screen and (min-width: $m_min_screen_width) {
+            grid-column: 1  / span 2;
+            order: 3;
+        }
     }
 
-    article:nth-child(4) {
+    article:nth-of-type(3) {
         grid-column: 1 / span 2;
+        border: 2px solid orange;
+        order: 3;
 
         @media only screen and (min-width: $sm_min_screen_width) {
             grid-column: 1 / span 2;
+            order: 4;
+        }
+
+        @media only screen and (min-width: $m_min_screen_width) {
+            grid-column: 3 / span 2;
+            order: 4;
         }
 
     }
     
-    article:nth-child(5) {
+    article:nth-of-type(4) {
         grid-column: 1 / span 1;
+        border: 2px solid blue;
+        order: 4;
         @media only screen and (min-width: $sm_min_screen_width) {
             grid-column: 3 / span 1;
+            order: 3;
+        }
+
+        @media only screen and (min-width: $m_min_screen_width) {
+            grid-column: 4 / span 1;
+            order: 2;
+        }
+
+        
+    }
+
+    article:nth-of-type(5) {
+        border: 2px solid rgb(0, 255, 85);
+        grid-column: 2 / span 1;
+        order: 5;
+
+        @media only screen and (min-width: $sm_min_screen_width) {
+            grid-column: 3 / span 1;
+
+        }
+
+        @media only screen and (min-width: $m_min_screen_width) {
+            grid-column: 1 / span 1;
         }
     }
 
-    article:nth-child(6) {
-        grid-column: 3 / span 1;
-    }
-
-    article:nth-child(7) {
+    article:nth-of-type(6) {
         grid-column: 1 / span 1;
+        order: 6;
+        @media only screen and (min-width: $sm_min_screen_width) {
+            grid-column: 1 / span 1;
+            
+        }
+
+        @media only screen and (min-width: $m_min_screen_width) {
+            grid-column: 2 / span 1;
+        }
     }
-
-    article:nth-child(8) {
+    
+    article:nth-of-type(7) {
         grid-column: 1 / span 2;
-
-        border: 2px solid black;
+        order: 7;
+        
         @media only screen and (min-width: $sm_min_screen_width) {
             grid-column: 2 / span 2;
         }
-    }
 
-    article:nth-child(9) {
-        grid-column: 1 / span 2;
-    }
-
-    article:nth-child(10) {
-        grid-column: 1 / span 2;
-    }
-
-    article:nth-child(11) {
-        grid-column: 1 / span 2;
-    }
-
-    article:nth-child(12) {
-        grid-column: 1 / span 2;
+        @media only screen and (min-width: $m_min_screen_width) {
+            grid-column: 3 / span 4;
+        }
     }
     
+    article:nth-of-type(8) {
+        grid-column: 1 / span 2;
+        border: 2px solid red;
+        order: 8;
+        @media only screen and (min-width: $sm_min_screen_width) {
+            grid-column: 1 / span 2;
+        }
+
+        @media only screen and (min-width: $m_min_screen_width) {
+            grid-column: 1 / span 2;
+        }
+    }
+
+    article:nth-of-type(9) {
+        grid-column: 1 / span 2;
+        order: 9;
+        @media only screen and (min-width: $sm_min_screen_width) {
+            grid-column: 1 / span 2;
+        }
+
+        @media only screen and (min-width: $m_min_screen_width) {
+            grid-column: 3 / span 2;
+        }
+    }
+
+    article:nth-of-type(10) {
+        grid-column: 1 / span 2;
+        order: 10;
+        @media only screen and (min-width: $sm_min_screen_width) {
+            grid-column: 1 / span 2;
+        }
+
+        @media only screen and (min-width: $m_min_screen_width) {
+            grid-column: 1 / span 2;
+        }
+    }
+    
+}
+
+footer {
+    a {
+        border: 1px solid black;
+        border-radius: 20%;
+    }
 }
 
 // breakpoint
