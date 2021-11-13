@@ -398,12 +398,36 @@ main {
         }
     }
     
-}
+    footer {
+        order: 11;
+        grid-row-end: 12;
 
-footer {
-    a {
-        border: 1px solid black;
-        border-radius: 20%;
+        a {
+            border: 3px solid black;
+            border-radius: 20%;
+            
+        }
+
+        grid-column: 2 / span 1;
+        @media only screen and (min-width: $sm_min_screen_width) {
+            grid-row-end: 9;
+            grid-column: 3 / span 1;
+        }
+
+        @media only screen and (min-width: $m_min_screen_width) {
+            grid-row-end: 7;
+            grid-column: 3 / span 1;
+        }
+
+        @media only screen and (min-width: $ml_min_screen_width) {
+            grid-row-end: 6;
+            grid-column: 4 / span 1;
+        }
+
+        @media only screen and (min-width: $l_min_screen_width) {
+            grid-row-end: 5;
+            grid-column: 5 / span 1;
+        }
     }
 }
 

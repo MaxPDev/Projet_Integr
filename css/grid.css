@@ -10,10 +10,6 @@
 @font-face {
   font-family: 'teaspoon';
   src: url("../fonts/teaspoon.ttf") format("truetype"); }
-body {
-  font-family: "teaspoon", sans-serif;
-  font-weight: lighter; }
-
 h2 {
   color: orange;
   font-weight: bolder; }
@@ -23,6 +19,9 @@ main nav {
 
 body > header {
   box-shadow: 0.5em 0.5em 0.7em gray; }
+  body > header #header_text {
+    color: gray;
+    font-weight: bolder; }
 
 body > header {
   padding: 1em;
@@ -289,10 +288,29 @@ main {
     @media only screen and (min-width: 91em) {
       main article:nth-of-type(10) {
         grid-column: 5 / span 2; } }
-
-footer a {
-  border: 1px solid black;
-  border-radius: 20%; }
+  main footer {
+    order: 11;
+    grid-row-end: 12;
+    grid-column: 2 / span 1; }
+    main footer a {
+      border: 3px solid black;
+      border-radius: 20%; }
+    @media only screen and (min-width: 53em) {
+      main footer {
+        grid-row-end: 9;
+        grid-column: 3 / span 1; } }
+    @media only screen and (min-width: 65em) {
+      main footer {
+        grid-row-end: 7;
+        grid-column: 3 / span 1; } }
+    @media only screen and (min-width: 77em) {
+      main footer {
+        grid-row-end: 6;
+        grid-column: 4 / span 1; } }
+    @media only screen and (min-width: 91em) {
+      main footer {
+        grid-row-end: 5;
+        grid-column: 5 / span 1; } }
 
 /**
 

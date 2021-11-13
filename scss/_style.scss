@@ -12,8 +12,8 @@
  $font: 'teaspoon', sans-serif;
 
  body {
-    font-family: $font;
-    font-weight: lighter;
+    // font-family: $font;
+    // font-weight: lighter;
 }
 
 h2 {
@@ -28,5 +28,10 @@ main nav {
 body > header {
 
     box-shadow: 0.5em 0.5em 0.7em gray;
+
+    #header_text {
+        color: gray;
+        font-weight: bolder;
+    }
     
 }
