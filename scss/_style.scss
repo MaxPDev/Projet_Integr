@@ -14,6 +14,7 @@
  body {
     // font-family: $font;
     // font-weight: lighter;
+    text-align: justify;
 }
 
 h2 {
@@ -21,6 +22,9 @@ h2 {
     font-weight: bolder;
 }
 
+main {
+    padding-bottom: 3em;
+}
 main nav {
     color: orange;
 }
@@ -34,4 +38,26 @@ body > header {
         font-weight: bolder;
     }
     
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+article {
+
+    .author_article {
+
+        ul a {
+            text-decoration: underline;
+        }
+        
+        ul>li + li {
+            font-style: italic;
+        }
+    }
+
+    box-shadow: 0.5em 0.2em 0.7em gray;
+    padding: 1em;
 }

@@ -9,6 +9,8 @@
 // small var
 // header
 
+// RAJOUTER SELECTEUR COMPLIQUÉ
+
 // LA VA DOIT ETRE FIX QUAND ON SCROLL
 
 $s_nb_col_header: 6;
@@ -400,33 +402,34 @@ main {
     
     footer {
         order: 11;
-        grid-row-end: 12;
+        grid-row-end: 14;
 
         a {
-            border: 3px solid black;
-            border-radius: 20%;
+            border: 1px solid black;
+            border-radius: 5em;
+            padding: 0.5em 2em 0.5em 2em;
             
         }
 
-        grid-column: 2 / span 1;
+        grid-column: 2;
         @media only screen and (min-width: $sm_min_screen_width) {
-            grid-row-end: 9;
-            grid-column: 3 / span 1;
+            grid-row-end: 11;
+            grid-column: 3;
         }
 
         @media only screen and (min-width: $m_min_screen_width) {
             grid-row-end: 7;
-            grid-column: 3 / span 1;
+            grid-column: 3 / span 2;
         }
 
         @media only screen and (min-width: $ml_min_screen_width) {
-            grid-row-end: 6;
-            grid-column: 4 / span 1;
+            grid-row-end:8;
+            grid-column: 4 / span 2;
         }
 
         @media only screen and (min-width: $l_min_screen_width) {
-            grid-row-end: 5;
-            grid-column: 5 / span 1;
+            grid-row-end: 7;
+            grid-column: 5 / span 2;
         }
     }
 }
