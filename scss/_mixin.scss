@@ -1,3 +1,15 @@
+
+// Mettre dans un autre _style
+@font-face {
+    font-family: 'majorl';
+    src: url("../fonts/majorl.ttf") format("truetype");
+ }
+
+ @font-face {
+    font-family: 'teaspoon';
+    src: url("../fonts/teaspoon.ttf") format("truetype");
+ }
+
 // _mixin.scss
 
 @mixin grid($nb_col, $col_width,$nb_rows, $row_width, $gap){
@@ -38,3 +50,4 @@
     flex-direction: row;
     flex-wrap: nowrap;
 }
+ 
