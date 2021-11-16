@@ -329,7 +329,7 @@ main {
             grid-column: 2 / span 2;
         }
 
-        @media only screen and (min-width: $5080m_min_screen_width) {
+        @media only screen and (min-width: $m_min_screen_width) {
             grid-column: 3 / span 4;
         }
 
