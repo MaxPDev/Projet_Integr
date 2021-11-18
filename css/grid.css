@@ -40,6 +40,11 @@ article {
     text-decoration: underline; }
   article .author_article ul > li + li {
     font-style: italic; }
+  article h3 {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    color: wheat;
+    text-shadow: 1px 1px 0.1px black; }
 
 body > header {
   padding: 1em;
@@ -135,13 +140,18 @@ main {
   main article {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    position: relative; }
     main article header {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap; }
       main article header img {
         width: 100%; }
+      main article header h3 {
+        position: absolute;
+        top: 1em;
+        left: 1.4em; }
     main article #author_article {
       display: flex;
       flex-direction: row;

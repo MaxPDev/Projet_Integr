@@ -174,11 +174,19 @@ main {
     article {
         @include flexRowWrap();
 
+        position: relative;
+
         header {
             @include flexRowWrap();
 
             img {
                 width: 100%;
+            }
+
+            h3 {
+                position: absolute;
+                top: 1em;
+                left: 1.4em;
             }
         }
 
