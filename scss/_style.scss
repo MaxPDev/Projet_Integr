@@ -11,11 +11,6 @@
 
  $font: 'teaspoon', sans-serif;
 
- body {
-    // font-family: $font;
-    // font-weight: lighter;
-    text-align: justify;
-}
 
 h2 {
     color: orange;
@@ -36,6 +31,7 @@ body > header {
     #header_text {
         color: gray;
         font-weight: bolder;
+        font-size: 1.5em;
     }
     
 }
@@ -47,7 +43,12 @@ a {
 
 article {
 
+    header {
+        margin-bottom: -0.5em;
+    }
+
     .author_article {
+        margin-left: -5em;
 
         ul a {
             text-decoration: underline;
@@ -57,7 +58,7 @@ article {
             font-style: italic;
         }
     }
-
+    
     h3 {
         text-transform: uppercase;
         font-size: 0.7em;
@@ -65,6 +66,17 @@ article {
         text-shadow: 1px 1px 0.1px black;
     }
 
+    .separator {
+        height: 0.5em;
+        width: 4em;
+        background-color: black;
+    }
+
+    .article_text {
+        text-align: justify;
+        font-size: 1.1rem;
+    }
+    
     box-shadow: 0.5em 0.2em 0.7em gray;
     padding: 1em;
 }

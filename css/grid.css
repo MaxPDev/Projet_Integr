@@ -4,15 +4,6 @@
 @font-face {
   font-family: 'teaspoon';
   src: url("../fonts/teaspoon.ttf") format("truetype"); }
-@font-face {
-  font-family: 'majorl';
-  src: url("../fonts/majorl.ttf") format("truetype"); }
-@font-face {
-  font-family: 'teaspoon';
-  src: url("../fonts/teaspoon.ttf") format("truetype"); }
-body {
-  text-align: justify; }
-
 h2 {
   color: orange;
   font-weight: bolder; }
@@ -27,7 +18,8 @@ body > header {
   box-shadow: 0.5em 0.5em 0.7em gray; }
   body > header #header_text {
     color: gray;
-    font-weight: bolder; }
+    font-weight: bolder;
+    font-size: 1.5em; }
 
 a {
   color: inherit;
@@ -36,21 +28,32 @@ a {
 article {
   box-shadow: 0.5em 0.2em 0.7em gray;
   padding: 1em; }
-  article .author_article ul a {
-    text-decoration: underline; }
-  article .author_article ul > li + li {
-    font-style: italic; }
+  article header {
+    margin-bottom: -0.5em; }
+  article .author_article {
+    margin-left: -5em; }
+    article .author_article ul a {
+      text-decoration: underline; }
+    article .author_article ul > li + li {
+      font-style: italic; }
   article h3 {
     text-transform: uppercase;
     font-size: 0.7em;
     color: wheat;
     text-shadow: 1px 1px 0.1px black; }
+  article .separator {
+    height: 0.5em;
+    width: 4em;
+    background-color: black; }
+  article .article_text {
+    text-align: justify;
+    font-size: 1.1rem; }
 
 body > header {
-  padding: 1em;
-  box-shadow: 0.5em 0.5em 0.7em gray;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  padding-right: 1em;
+  padding-left: 1em; }
   body > header h1 {
     align-self: flex-start;
     display: flex;
@@ -67,7 +70,7 @@ body > header {
     flex-direction: row;
     flex-wrap: nowrap; }
     body > header #header_nav img {
-      width: 1em;
+      width: 1.8em;
       padding: 0.4em; }
   @media only screen and (min-width: 53em) {
     body > header {
@@ -151,7 +154,7 @@ main {
       main article header h3 {
         position: absolute;
         top: 1em;
-        left: 1.4em; }
+        left: 2em; }
     main article #author_article {
       display: flex;
       flex-direction: row;

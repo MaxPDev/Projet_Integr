@@ -10,13 +10,9 @@
 // header
 
 // RAJOUTER SELECTEUR COMPLIQUÉ
-
-// LA VA DOIT ETRE FIX QUAND ON SCROLL
-
+// changer noms breakpoint
 // METTRE LE ORDER DANS ELEMENT
-// footer flex ?
 
-// h2 dans images
 
 $s_nb_col_header: 6;
 $s_nb_col_main: 2;
@@ -37,31 +33,12 @@ $l_min_screen_width: 91em;
 $gutter_width: 1em;
 
 
-
-
-// temporary width img
-header img {
-    // width: 2.5em;
-}
-
-// body {
-//     @include grid(3, 1fr, auto, auto, 0);
-//     @include cssGrid(2,1);
-// }
-
-// style autre page
-
-
 body > header {
-
-    padding: 1em;
-    // border-bottom: ;
-    box-shadow: 0.5em 0.5em 0.7em gray;
-
-    // @include flexRowWrap();
     display: flex;
     flex-direction: column;
-    
+
+    padding-right: 1em;
+    padding-left: 1em;
     
     h1 {
         align-self: flex-start;
@@ -75,10 +52,6 @@ body > header {
             width: 2.5em
         }
     }
-
-    #header_title {
-        //
-    }
     
     #header_nav {
         align-self: flex-end;
@@ -86,16 +59,12 @@ body > header {
         @include flexRowNoWrap();
         
         img { // with flex ?
-            width: 1em;
+            width: 1.8em;
             padding: 0.4em;
         }
         
     }
-    
-    #header_text {
-        // order: 3;
-    }
-    
+
     @media only screen and (min-width: $sm_min_screen_width) {
         @include flexRowWrap;
         align-items: center;
@@ -186,7 +155,7 @@ main {
             h3 {
                 position: absolute;
                 top: 1em;
-                left: 1.4em;
+                left: 2em;
             }
         }
 
