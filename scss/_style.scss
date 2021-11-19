@@ -1,16 +1,4 @@
 // style.scss
-@font-face {
-    font-family: 'majorl';
-    src: url("../fonts/majorl.ttf") format("truetype");
- }
-
- @font-face {
-    font-family: 'teaspoon';
-    src: url("../fonts/teaspoon.ttf") format("truetype");
- }
-
- $font: 'teaspoon', sans-serif;
-
 
 h2 {
     color: orange;
@@ -33,7 +21,6 @@ body > header {
         font-weight: bolder;
         font-size: 1.5em;
     }
-    
 }
 
 a {

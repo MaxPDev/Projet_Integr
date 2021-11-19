@@ -3,46 +3,28 @@
 @import 'mixin';
 @import 'style';
 
-
-// rename
-
-// small var
-// header
-
-// RAJOUTER SELECTEUR COMPLIQUÉ
-// changer noms breakpoint
-// METTRE LE ORDER DANS ELEMENT
-
-
-$s_nb_col_header: 6;
-$s_nb_col_main: 2;
-
-// small medium var
-$sm_min_screen_width: 53em;
-
-// medium var
+$s_min_screen_width: 53em;
 $m_min_screen_width: 65em;
+$l_min_screen_width: 77em;
+$el_min_screen_width: 91em;
 
-// medium large var
-$ml_min_screen_width: 77em;
-
-// large var
-$l_min_screen_width: 91em;
-
+$xs_nb_col_main: 2;
+$s_nb_col_main: 3;
+$m_nb_col_main: 4;
+$l_nb_col_main: 5;
+$el_nb_col_main: 6;
 
 $gutter_width: 1em;
-
 
 body > header {
     display: flex;
     flex-direction: column;
 
-    padding-right: 1em;
-    padding-left: 1em;
+    padding-right: $gutter_width;
+    padding-left: $gutter_width;
     
     h1 {
         align-self: flex-start;
-        // order: 1;
         @include flexRowWrap();
         justify-self: space-between;
         align-items: center;
@@ -55,17 +37,16 @@ body > header {
     
     #header_nav {
         align-self: flex-end;
-        // order: 2;
         @include flexRowNoWrap();
         
-        img { // with flex ?
+        img { 
             width: 1.8em;
             padding: 0.4em;
         }
         
     }
 
-    @media only screen and (min-width: $sm_min_screen_width) {
+    @media only screen and (min-width: $s_min_screen_width) {
         @include flexRowWrap;
         align-items: center;
         justify-content: space-between;
@@ -81,63 +62,34 @@ body > header {
         #header_text {
             flex-basis: 100%;
         }
-        
     }
-
-    // @media only screen and (min-width: $m_min_screen_width) {
-        
-    // }
-
-    // @media only screen and (min-width: $ml_min_screen_width) {
-        
-    // }
-
-    // @media only screen and (min-width: $l_min_screen_width) {
-        
-    // }
 }
 
 
 main {
     
-    @include cssGrid(2, 1em);
+    @include cssGrid($xs_nb_col_main, $gutter_width);
 
-    @media only screen and (min-width: $sm_min_screen_width) {
-        @include cssGrid(3, 1em);
+    @media only screen and (min-width: $s_min_screen_width) {
+        @include cssGrid($s_nb_col_main, $gutter_width);
     }
 
     @media only screen and (min-width: $m_min_screen_width) {
-        @include cssGrid(4, 1em);
-    }
-
-    @media only screen and (min-width: $ml_min_screen_width) {
-        @include cssGrid(5, 1em);
+        @include cssGrid($m_nb_col_main, $gutter_width);
     }
 
     @media only screen and (min-width: $l_min_screen_width) {
-        @include cssGrid(6, 1em);
+        @include cssGrid($l_nb_col_main, $gutter_width);
+    }
+
+    @media only screen and (min-width: $el_min_screen_width) {
+        @include cssGrid($el_nb_col_main, $gutter_width);
     }
 
     
     nav {
-        grid-column: 1 / span 1; // 1 ou 2 ??
+        grid-column: 1 / span 1;
         order: 0;
-
-        @media only screen and (min-width: $sm_min_screen_width) {
-            grid-column: 1 / span 1;
-        }
-
-        @media only screen and (min-width: $m_min_screen_width) {
-            grid-column: 1 / span 1;
-        }
-
-        @media only screen and (min-width: $ml_min_screen_width) {
-            grid-column: 1 / span 1;
-        }
-
-        @media only screen and (min-width: $l_min_screen_width) {
-            grid-column: 1 / span 1;
-        }
     }
 
     article {
@@ -168,7 +120,7 @@ main {
         grid-column: 1 / span 2;
         order: 1;
 
-        @media only screen and (min-width: $sm_min_screen_width) {
+        @media only screen and (min-width: $s_min_screen_width) {
             grid-column: 2 / span 2;
         }
 
@@ -176,11 +128,11 @@ main {
             grid-column: 2  / span 2;
         }
 
-        @media only screen and (min-width: $ml_min_screen_width) {
+        @media only screen and (min-width: $l_min_screen_width) {
             grid-column: 2 / span 2;
         }
 
-        @media only screen and (min-width: $l_min_screen_width) {
+        @media only screen and (min-width: $el_min_screen_width) {
             grid-column: 2 / span 2;
         }
     }
@@ -189,7 +141,7 @@ main {
         grid-column: 1 / span 2;
         order: 2;
 
-        @media only screen and (min-width: $sm_min_screen_width) {
+        @media only screen and (min-width: $s_min_screen_width) {
             grid-column: 1 / span 2;
         }
 
@@ -198,12 +150,12 @@ main {
             order: 3;
         }
 
-        @media only screen and (min-width: $ml_min_screen_width) {
+        @media only screen and (min-width: $l_min_screen_width) {
             grid-column: 4 / span 2;
             order: 2;
         }
 
-        @media only screen and (min-width: $l_min_screen_width) {
+        @media only screen and (min-width: $el_min_screen_width) {
             grid-column: 4 / span 2;
         }
     }
@@ -212,7 +164,7 @@ main {
         grid-column: 1 / span 2;
         order: 3;
 
-        @media only screen and (min-width: $sm_min_screen_width) {
+        @media only screen and (min-width: $s_min_screen_width) {
             grid-column: 1 / span 2;
             order: 4;
         }
@@ -222,12 +174,12 @@ main {
             order: 4;
         }
 
-        @media only screen and (min-width: $ml_min_screen_width) {
+        @media only screen and (min-width: $l_min_screen_width) {
             grid-column: 1 / span 2;
             order: 3;
         }
 
-        @media only screen and (min-width: $l_min_screen_width) {
+        @media only screen and (min-width: $el_min_screen_width) {
             grid-column: 1 / span 2;
             order: 4;
         }
@@ -237,7 +189,7 @@ main {
     article:nth-of-type(4) {
         grid-column: 1 / span 1;
         order: 4;
-        @media only screen and (min-width: $sm_min_screen_width) {
+        @media only screen and (min-width: $s_min_screen_width) {
             grid-column: 3 / span 1;
             order: 3;
         }
@@ -247,12 +199,12 @@ main {
             order: 2;
         }
 
-        @media only screen and (min-width: $ml_min_screen_width) {
+        @media only screen and (min-width: $l_min_screen_width) {
             grid-column: 3 / span 1;
             order: 4;
         }
 
-        @media only screen and (min-width: $l_min_screen_width) {
+        @media only screen and (min-width: $el_min_screen_width) {
             grid-column: 6 / span 1;
             order: 3;
         }
@@ -263,7 +215,7 @@ main {
         grid-column: 2 / span 1;
         order: 5;
 
-        @media only screen and (min-width: $sm_min_screen_width) {
+        @media only screen and (min-width: $s_min_screen_width) {
             grid-column: 3 / span 1;
         }
 
@@ -271,11 +223,11 @@ main {
             grid-column: 1 / span 1;
         }
 
-        @media only screen and (min-width: $ml_min_screen_width) {
+        @media only screen and (min-width: $l_min_screen_width) {
             grid-column: 4 / span 1;
         }
 
-        @media only screen and (min-width: $l_min_screen_width) {
+        @media only screen and (min-width: $el_min_screen_width) {
             grid-column: 3 / span 1;
         }
     }
@@ -283,7 +235,7 @@ main {
     article:nth-of-type(6) {
         grid-column: 1 / span 1;
         order: 6;
-        @media only screen and (min-width: $sm_min_screen_width) {
+        @media only screen and (min-width: $s_min_screen_width) {
             grid-column: 1 / span 1;
             
         }
@@ -292,11 +244,11 @@ main {
             grid-column: 2 / span 1;
         }
 
-        @media only screen and (min-width: $ml_min_screen_width) {
+        @media only screen and (min-width: $l_min_screen_width) {
             grid-column: 5 / span 1;
         }
 
-        @media only screen and (min-width: $l_min_screen_width) {
+        @media only screen and (min-width: $el_min_screen_width) {
             grid-column: 4 / span 1;
         }
     }
@@ -305,7 +257,7 @@ main {
         grid-column: 1 / span 2;
         order: 7;
         
-        @media only screen and (min-width: $sm_min_screen_width) {
+        @media only screen and (min-width: $s_min_screen_width) {
             grid-column: 2 / span 2;
         }
 
@@ -313,11 +265,11 @@ main {
             grid-column: 3 / span 4;
         }
 
-        @media only screen and (min-width: $ml_min_screen_width) {
+        @media only screen and (min-width: $l_min_screen_width) {
             grid-column: 1 / span 2;
         }
 
-        @media only screen and (min-width: $l_min_screen_width) {
+        @media only screen and (min-width: $el_min_screen_width) {
             grid-column: 5 / span 2;
         }
     }
@@ -325,7 +277,7 @@ main {
     article:nth-of-type(8) {
         grid-column: 1 / span 2;
         order: 8;
-        @media only screen and (min-width: $sm_min_screen_width) {
+        @media only screen and (min-width: $s_min_screen_width) {
             grid-column: 1 / span 2;
         }
 
@@ -333,11 +285,11 @@ main {
             grid-column: 1 / span 2;
         }
 
-        @media only screen and (min-width: $ml_min_screen_width) {
+        @media only screen and (min-width: $l_min_screen_width) {
             grid-column: 3 / span 2;
         }
 
-        @media only screen and (min-width: $l_min_screen_width) {
+        @media only screen and (min-width: $el_min_screen_width) {
             grid-column: 1 / span 2;
         }
     }
@@ -345,7 +297,7 @@ main {
     article:nth-of-type(9) {
         grid-column: 1 / span 2;
         order: 9;
-        @media only screen and (min-width: $sm_min_screen_width) {
+        @media only screen and (min-width: $s_min_screen_width) {
             grid-column: 1 / span 2;
         }
 
@@ -353,11 +305,11 @@ main {
             grid-column: 3 / span 2;
         }
 
-        @media only screen and (min-width: $ml_min_screen_width) {
+        @media only screen and (min-width: $l_min_screen_width) {
             grid-column: 1 / span 2;
         }
 
-        @media only screen and (min-width: $l_min_screen_width) {
+        @media only screen and (min-width: $el_min_screen_width) {
             grid-column: 3 / span 2;
         }
     }
@@ -365,7 +317,7 @@ main {
     article:nth-of-type(10) {
         grid-column: 1 / span 2;
         order: 10;
-        @media only screen and (min-width: $sm_min_screen_width) {
+        @media only screen and (min-width: $s_min_screen_width) {
             grid-column: 1 / span 2;
         }
 
@@ -373,11 +325,11 @@ main {
             grid-column: 1 / span 2;
         }
 
-        @media only screen and (min-width: $ml_min_screen_width) {
+        @media only screen and (min-width: $l_min_screen_width) {
             grid-column: 3 / span 2;
         }
 
-        @media only screen and (min-width: $l_min_screen_width) {
+        @media only screen and (min-width: $el_min_screen_width) {
             grid-column: 5 / span 2;
         }
     }
@@ -389,12 +341,11 @@ main {
         a {
             border: 1px solid black;
             border-radius: 5em;
-            padding: 0.5em 2em 0.5em 2em;
-            
+            padding: 0.5em 2em 0.5em 2em;    
         }
 
         grid-column: 2;
-        @media only screen and (min-width: $sm_min_screen_width) {
+        @media only screen and (min-width: $s_min_screen_width) {
             grid-row-end: 11;
             grid-column: 3;
         }
@@ -404,35 +355,14 @@ main {
             grid-column: 3 / span 2;
         }
 
-        @media only screen and (min-width: $ml_min_screen_width) {
+        @media only screen and (min-width: $l_min_screen_width) {
             grid-row-end:8;
             grid-column: 4 / span 2;
         }
 
-        @media only screen and (min-width: $l_min_screen_width) {
+        @media only screen and (min-width: $el_min_screen_width) {
             grid-row-end: 7;
             grid-column: 5 / span 2;
         }
     }
 }
-
-// breakpoint
-/**
-
-    @media only screen and (min-width: $sm_min_screen_width) {
-        
-    }
-
-    @media only screen and (min-width: $m_min_screen_width) {
-        
-    }
-
-    @media only screen and (min-width: $ml_min_screen_width) {
-        
-    }
-
-    @media only screen and (min-width: $l_min_screen_width) {
-        
-    }
-
-*/
